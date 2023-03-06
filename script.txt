@@ -1,0 +1,29 @@
+this.seatUpdate$.subscribe(x=>{
+    try {
+        console.log(x)
+        const {seatId, name, kind} = x;
+        if (!name) {
+            let interval = setInterval(()=>{
+                try {
+                    const emptySeat = document.getElementsByClassName("blackjack-available-seat__icon")[0]?.parentElement;
+                    console.log('Empty seat', emptySeat);
+                    if (emptySeat) {
+                        emptySeat?.click();
+                        clearInterval(interval);
+                        interval = null;
+                    }
+                } catch (e) {
+                    console.error(e)
+                }
+
+            }
+            , 50)
+            console.log('Interval:', interval)
+        }
+
+    } catch (e) {
+        console.error(e)
+    }
+
+}
+)

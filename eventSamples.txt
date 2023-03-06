@@ -1,0 +1,349 @@
+
+// bettingOver$
+{
+  "header": {
+    "windowId": "1",
+    "timestamp": 1678111311828,
+    "orderId": 11
+  },
+  "roundCode": 536487813,
+  "bettingRoundIndex": 0
+}
+
+// gameEvent$
+{
+  "header": {
+    "windowId": "1",
+    "timestamp": 1678111315200,
+    "orderId": 21
+  },
+  "roundCode": 536487813,
+  "timestamp": 1678111315176,
+  "dealCard": {
+    "card": 26,
+    "handIdentifier": {
+      "position": 1,
+      "hand": 2
+    }
+  },
+  "state": {
+    "roundCode": 536487813,
+    "gameRoundState": {
+      "cardGame": {
+        "hands": [
+          {
+            "identifier": {
+              "position": 0,
+              "hand": 3
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 1,
+              "hand": 2
+            },
+            "cards": [
+              26
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 2,
+              "hand": 2
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 3,
+              "hand": 2
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 4,
+              "hand": 2
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 5,
+              "hand": 2
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 6,
+              "hand": 2
+            },
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 7,
+              "hand": 2
+            },
+            "status": 1
+          }
+        ]
+      },
+      "surrenderTotalAmount": 0
+    }
+  }
+}
+
+// waitAction$
+{
+  "header": {
+    "windowId": "1",
+    "timestamp": 1678111327338,
+    "orderId": 38
+  },
+  "roundCode": 536487813,
+  "actionStartTime": 1678111327338,
+  "actionDuration": 14,
+  "actionRoundId": "xwsMvBAGkX",
+  "handIdentifier": {
+    "position": 2,
+    "hand": 2
+  },
+  "allowedActions": [
+    3,
+    8,
+    1,
+    2
+  ],
+  "participating": false
+}
+
+// roundeOver$
+{
+  "header": {
+    "windowId": "1",
+    "timestamp": 1678111417336,
+    "orderId": 70
+  },
+  "roundId": 536487813,
+  "winAmount": 0,
+  "eventTime": 1678111417298,
+  "state": {
+    "roundCode": 536487813,
+    "canceled": false,
+    "gameRoundState": {
+      "cardGame": {
+        "hands": [
+          {
+            "identifier": {
+              "position": 0,
+              "hand": 3
+            },
+            "cards": [
+              35,
+              27,
+              27,
+              22
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 1,
+              "hand": 2
+            },
+            "cards": [
+              26,
+              37
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 2,
+              "hand": 2
+            },
+            "cards": [
+              48,
+              22
+            ],
+            "actions": [
+              8
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 3,
+              "hand": 2
+            },
+            "cards": [
+              2,
+              13,
+              15,
+              8,
+              39
+            ],
+            "actions": [
+              1,
+              1,
+              1,
+              8
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 4,
+              "hand": 2
+            },
+            "cards": [
+              38,
+              16,
+              7
+            ],
+            "actions": [
+              1
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 5,
+              "hand": 2
+            },
+            "cards": [
+              7,
+              1,
+              32
+            ],
+            "actions": [
+              1,
+              8
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 6,
+              "hand": 2
+            },
+            "cards": [
+              24,
+              6
+            ],
+            "actions": [
+              8
+            ],
+            "status": 1
+          },
+          {
+            "identifier": {
+              "position": 7,
+              "hand": 2
+            },
+            "cards": [
+              15,
+              44,
+              44,
+              36
+            ],
+            "actions": [
+              1,
+              1
+            ],
+            "status": 1
+          }
+        ]
+      },
+      "payouts": [
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 221,
+          "payout": 6
+        },
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 223,
+          "payout": 30
+        },
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 227,
+          "payout": 6
+        },
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 228,
+          "payout": 30
+        },
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 232,
+          "payout": 90
+        },
+        {
+          "handIdentifier": {
+            "position": 2,
+            "hand": 2
+          },
+          "betType": 235,
+          "payout": 90
+        }
+      ],
+      "surrenderTotalAmount": 0
+    }
+  },
+  "tableSessionWinAmount": 0,
+  "tableSessionBetAmount": 0,
+  "blackjackPayload": {
+    "positionInfos": [
+      {
+        "position": 1,
+        "winCounter": 3
+      },
+      {
+        "position": 2,
+        "winCounter": 3
+      },
+      {
+        "position": 3,
+        "winCounter": 2
+      },
+      {
+        "position": 4,
+        "winCounter": 0
+      },
+      {
+        "position": 5,
+        "winCounter": 3
+      },
+      {
+        "position": 6,
+        "winCounter": 1
+      },
+      {
+        "position": 7,
+        "winCounter": 0
+      }
+    ]
+  }
+}
