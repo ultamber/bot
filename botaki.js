@@ -14,7 +14,7 @@ function isAnAce(cls) {
 }
 
 function getValueOfCard(cards) {
-    switch(suitless(cards)) {
+    switch(cards) {
         case "2": return 2;
         case "3": return 3;
         case "4": return 4;
@@ -32,58 +32,98 @@ function getValueOfCard(cards) {
     }
 }
 
-function rankOf(cards) {
-    switch(suitless(cards)) {
-        case "2": return "Two";
-        case "3": return "Three";
-        case "4": return "Four";
-        case "5": return "Five";
-        case "6": return "Six";
-        case "7": return "Seven";
-        case "8": return "Eight";
-        case "9": return "Nine";
-        case "10": return "Ten";
-        case "J": return "Jack";
-        case "Q": return "Queen";
-        case "K": return "King";
-        case "A": return "Ace";
-    }
+// function rankOf(cards) {
+//     switch(cards) {
+//         case "2": return "Two";
+//         case "3": return "Three";
+//         case "4": return "Four";
+//         case "5": return "Five";
+//         case "6": return "Six";
+//         case "7": return "Seven";
+//         case "8": return "Eight";
+//         case "9": return "Nine";
+//         case "10": return "Ten";
+//         case "J": return "Jack";
+//         case "Q": return "Queen";
+//         case "K": return "King";
+//         case "A": return "Ace";
+//     }
+// }
+
+function main(){
+
+    let res = determineAction();
+    action(res);
+
 }
+
 
 function isPair(cards){
-    if ((cards.length == 2) && (rankOf(cards[0].class) == rankOf(cards[1].class)))
-        return true;
-    return false;
+   return ((cards.length === 2) && (cards[0] === cards[1]));
 }
 
-function determineAction(cards,dealersHand, total , soft ) {
-if(cards.length == 2) {
-    if(isPair(cards)) {
-        // split or not 
-        let pair = getValueOfCard(cards[0].class);
-
-        let result = lookupPairs(pair,dealersHand);
-    }   
-    else if(soft){
-        if ( suitless(cards[0].class) == "A")
-            result = lookupSoft(cards[0].class);
-        else
-            result = lookupSoft(cards[1].class);
-    }
-    else{
-        // todo fix
-        let result = lookupTotals(cards)
-    }
-    action(result);
+function isSoft(cards){
+    return ((cards[0] === 1 ) || (cards[1] === 1));
 }
+
+// cards = [3,5,2]
+// dealershand = 9
+
+function determineAction(cards,dealersHand) {
+    let result ;
+    if(cards.length == 2) {
+        if(isPair(cards)) {
+            // split or not 
+            //if "10":"S",
+            if(cards[0] === 10)
+                result = "S";
+            else
+                result = lookupPairs[cards[0][dealersHand]];
+        }   
+        else if(isSoft(cards)){
+            // "8":"S",
+            // "9":"S"
+            if (cards[0] === "A"){
+                
+                result = lookupSoft[cards[1]][dealersHand];
+            }
+            else
+                result = lookupSoft[cards[0]][dealersHand];
+        }
+        else{
+            // todo fix
+            // "5":"H",
+            // "6":"H",
+            // "7":"H",
+            // "8":"H",
+            let total = cards[0] + cards[1];
+            if( total < 9 ) 
+                result = "H";
+            else 
+                result = lookupTotals[total][dealersHand];
+        }
+        return result;
+    }
+}
+
+
+function action(act){
+    switch(act){
+        case "H":
+        // hit
+        case "S":
+        // stand
+        case "D":
+        // double , hit if not allowed
+        case "DS":
+        // double , stand if not allowed
+        case "P":
+        // split
+    }
 }
 
 
 const lookupTotals = {
-    "5":"H",
-    "6":"H",
-    "7":"H",
-    "8":"H",
     "9":{
         "2":"H","3":"D","4":"D","5":"D","6":"D","7":"H","8":"H","9":"H","10":"H","A":"H"
     },
@@ -140,8 +180,7 @@ const lookupPairs = {
     },
     "9":{
         "2":"P","3":"P","4":"P","5":"P","6":"P","7":"S","8":"P","9":"P","10":"S","A":"S"
-    },
-    "10":"S",
+    }
 }
 
 
@@ -163,23 +202,6 @@ let lookupSoft = {
     },
     "7": {
         "2":"S","3":"DS","4":"DS","5":"DS","6":"DS","7":"S","8":"S","9":"S","10":"S","A":"S"
-    },
-    "8":"S",
-    "9":"S"
-}
-
-function action(act){
-    switch(act){
-        case "H":
-        // hit
-        case "S":
-        // stand
-        case "D":
-        // double , hit if not allowed
-        case "DS":
-        // double , stand if not allowed
-        case "P":
-        // split
     }
 }
 
@@ -248,18 +270,12 @@ const CardId = {
 6,19,32,44=7
 7,20,33,45=8
 8,21,34,46=9
-9,22,35,47=10
-10,23,36,48=J
-11,24,37,49=Q
-12,25,38,50=K
-13,26,39,51=A
+9,22,35,47,10,23,36,48,11,24,37,49,12,25,38,50=10
+13,26,39,51=1
 
 
+function onEvent(event: string, payload: object);
 
-
-[
-
-
-
-
-]
+// πχ: 
+onEvent('gameEvent$',{ header: {…}, roundCode: 536489121, timestamp: 1678111604649, dealCard: {…}, state: {…} })
+onEvent('waitAction$', { header: {…}, roundCode: 536489121, actionStartTime: 1678111588902, actionDuration: 14, actionRoundId: "LbEbYceBKR", handIdentifier: {…}, allowedActions: (2) […], participating: false }
