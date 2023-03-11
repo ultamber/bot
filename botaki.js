@@ -274,8 +274,8 @@ const CardId = {
 13,26,39,51=1
 
 
-function onEvent(event: string, payload: object);
+// function onEvent(event: string, payload: object);
 
-// πχ: 
-onEvent('gameEvent$',{ header: {…}, roundCode: 536489121, timestamp: 1678111604649, dealCard: {…}, state: {…} })
-onEvent('waitAction$', { header: {…}, roundCode: 536489121, actionStartTime: 1678111588902, actionDuration: 14, actionRoundId: "LbEbYceBKR", handIdentifier: {…}, allowedActions: (2) […], participating: false }
+// // πχ: 
+// onEvent('gameEvent$',{ header: {…}, roundCode: 536489121, timestamp: 1678111604649, dealCard: {…}, state: {…} })
+// onEvent('waitAction$', { header: {…}, roundCode: 536489121, actionStartTime: 1678111588902, actionDuration: 14, actionRoundId: "LbEbYceBKR", handIdentifier: {…}, allowedActions: (2) […], participating: false }
